@@ -38,7 +38,7 @@ const CV = React.forwardRef((props, ref) => {
 
   // Soft Skills
   const softSkills = [
-    "Communications",
+    "Communication",
     "Teamwork",
     "Flexibility",
     "Open-minded",
@@ -134,10 +134,15 @@ const CV = React.forwardRef((props, ref) => {
   ];
 
   // Interests & Hobbies
-  const interests = [
-    { name: "Reading", icon: <FaBook /> },
-    { name: "Volleyball", icon: <PiVolleyballLight /> },
-    { name: "Music", icon: <FaMusic /> }
+  // const interests = [
+  //   { name: "Reading", icon: <FaBook /> },
+  //   { name: "Volleyball", icon: <PiVolleyballLight /> },
+  //   { name: "Music", icon: <FaMusic /> }
+  // ];
+
+  // References
+  const references = [
+    
   ];
 
   // ==================== END OF EDITABLE DATA ====================
@@ -352,7 +357,7 @@ const CV = React.forwardRef((props, ref) => {
           </div>
         </div>
 
-        {/* INTERESTS */}
+        {/* INTERESTS
         <div className="mt-5 break-inside-avoid">
           <h2 className="text-lg font-bold text-gray-900 border-b-2 border-blue-600 pb-1" style={{borderBottomWidth: '2px', borderBottomStyle: 'solid', borderBottomColor: '#2563eb'}}>
             INTERESTS & HOBBIES
@@ -363,6 +368,35 @@ const CV = React.forwardRef((props, ref) => {
                 <span className="mr-2">{interest.icon}</span> {interest.name}
               </div>
             ))}
+          </div>
+        </div> */}
+
+        {/* REFERENCES */}
+        <div className="mt-5 break-inside-avoid">
+          <h2 className="text-lg font-bold text-gray-900 border-b-2 border-blue-600 pb-1" style={{borderBottomWidth: '2px', borderBottomStyle: 'solid', borderBottomColor: '#2563eb'}}>
+            REFERENCES
+          </h2>
+
+          <div className="mt-3 space-y-3">
+            {references && references.length > 0 ? (
+              references.map((reference, index) => (
+                <div key={index} className="flex text-xs">
+                  <div className="mr-2 text-blue-600 shrink-0">📋</div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold text-gray-900">{reference.name}</p>
+                    <p className="text-gray-700 truncate">{reference.position} at {reference.institution}</p>
+                    <p className="text-gray-600 truncate">
+                      <MdOutlineEmail className="inline mr-1" /> {reference.email}
+                    </p>
+                    <p className="text-gray-600 truncate">
+                      <MdPhone className="inline mr-1" /> {reference.phone}
+                    </p>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p className="text-xs text-gray-700 italic">Available upon request</p>
+            )}
           </div>
         </div>
 
