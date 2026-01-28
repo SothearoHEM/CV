@@ -1,5 +1,5 @@
 import React from "react";
-import { MdOutlineEmail, MdPhone, MdLocationOn, MdLanguage, MdPerson, MdFlag, MdFavorite, MdCake, MdPlace } from "react-icons/md";
+import { MdOutlineEmail, MdPhone, MdLocationOn, MdLanguage } from "react-icons/md";
 import { FaLink, FaCalendar, FaBook, FaMusic } from "react-icons/fa";
 import { PiVolleyballLight } from "react-icons/pi";
 import img from "../assets/img.jpg";
@@ -15,27 +15,22 @@ const CV = React.forwardRef((props, ref) => {
     phone: "+855 92 20 23 93",
     address: "#884, st113, Ou Baek K'am, Sen Sok, Phnom Penh",
     website: "https://hem-sotheearo-portfolio-react-js-wi.vercel.app/",
-    sex: "Male",
-    nation: "Khmer",
-    status: "Single",
-    born: "20/May/2005",
-    pob: "Kampong Cham",
     imgSrc: img
   };
 
   // Professional Summary
-  const professionalSummary = "I am a third-year Computer Science student who likes building websites and web applications. I have experience using ReactJS for frontend and PHP Laravel for backend. I can create simple APIs, connect database, and build responsive web pages. I want to improve my skills and gain real working experience as a web developer intern. I am a quick learner, hardworking, and a team player who is eager to contribute to the success of the organization. I am excited to apply my knowledge and skills in a professional setting and learn from experienced developers.";
+  const professionalSummary = "I am a third-year Computer Science student who likes building websites and web applications. I have experience using ReactJS for frontend and PHP Laravel for backend. I can create simple APIs, connect database, and build responsive web pages. I want to improve my skills and gain real working experience as a web developer intern. I am a quick learner, hardworking, and a team player who is eager to contribute to the success of the organization.";
 
-  // Technical Skills (with proficiency percentage)
+  // Technical Skills
   const technicalSkills = [
-    { name: "HTML/CSS/JavaScript", proficiency: 75 },
-    { name: "React (Basic)", proficiency: 70 },
-    { name: "Tailwind CSS", proficiency: 70 },
-    { name: "PHP/Laravel (Basic)", proficiency: 60 },
-    { name: "SQL/Database", proficiency: 65 },
-    { name: "Git/GitHub", proficiency: 60 },
-    { name: "C#/.NET", proficiency: 60 },
-    { name: "CCNA Networking", proficiency: 60 }
+    "HTML/CSS/JavaScript",
+    "React (Basic)",
+    "Tailwind CSS",
+    "PHP/Laravel (Basic)",
+    "SQL/Database",
+    "Git/GitHub",
+    "C#/.NET",
+    "CCNA Networking"
   ];
 
   // Additional Technical Skills (displayed as text)
@@ -72,8 +67,8 @@ const CV = React.forwardRef((props, ref) => {
 
   // Languages
   const languages = [
-    { name: "Khmer", level: "Native", proficiency: 100 },
-    { name: "English", level: "Advanced", proficiency: 80 }
+    { name: "Khmer", level: "Native" },
+    { name: "English", level: "Advanced" }
   ];
 
   // Projects
@@ -82,13 +77,21 @@ const CV = React.forwardRef((props, ref) => {
       name: "Portfolio Website (ReactJS)",
       link: "https://hem-sotheearo-portfolio-react-js-wi.vercel.app/",
       techStack: "ReactJS + Tailwind CSS",
-      description: "A fully responsive personal portfolio website showcasing my work and skills. Built with modern web technologies including React and Tailwind CSS."
+      description: [
+        "A fully responsive personal portfolio website",
+        "Showcasing my work and skills",
+        "Built with modern web technologies including React and Tailwind CSS"
+      ]
     },
     {
       name: "E-Commerce Project Front-End",
       link: "https://e-commerce-project-chi-vert.vercel.app/",
       techStack: "ReactJS + Tailwind CSS + Context API",
-      description: "A responsive e-commerce website featuring product listings, shopping cart functionality, and a user-friendly interface, Cart built with modern web technologies."
+      description: [
+        "A responsive e-commerce website",
+        "Product listings and shopping cart functionality",
+        "User-friendly interface built with modern web technologies"
+      ]
     }
   ];
 
@@ -181,15 +184,6 @@ const CV = React.forwardRef((props, ref) => {
           </div>
         </div>
 
-        {/* PERSONAL INFO */}
-        <div className="grid grid-cols-3 gap-3 text-sm mt-4 bg-gray-50 p-3 rounded-lg" style={{backgroundColor: '#f9fafb'}}>
-          <p><span className="font-semibold text-gray-700 inline-flex items-center"><MdPerson className="mr-1" /> Sex:</span> {personalInfo.sex}</p>
-          <p><span className="font-semibold text-gray-700 inline-flex items-center"><MdFlag className="mr-1" /> Nation:</span> {personalInfo.nation}</p>
-          <p><span className="font-semibold text-gray-700 inline-flex items-center"><MdFavorite className="mr-1" /> Status:</span> {personalInfo.status}</p>
-          <p><span className="font-semibold text-gray-700 inline-flex items-center"><MdCake className="mr-1" /> Born:</span> {personalInfo.born}</p>
-          <p><span className="font-semibold text-gray-700 inline-flex items-center"><MdPlace className="mr-1" /> POB:</span> {personalInfo.pob}</p>
-        </div>
-
         {/* PROFESSIONAL SUMMARY */}
         <div className="mt-5 break-inside-avoid">
           <h2 className="text-lg font-bold text-gray-900 border-b-2 border-blue-600 pb-1" style={{borderBottomWidth: '2px', borderBottomStyle: 'solid', borderBottomColor: '#2563eb'}}>
@@ -210,16 +204,10 @@ const CV = React.forwardRef((props, ref) => {
             <h3 className="font-semibold text-sm text-gray-800 mb-2">
               Technical Skills
             </h3>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-4 gap-2 text-xs">
               {technicalSkills.map((skill, index) => (
-                <div key={index}>
-                  <div className="flex justify-between text-xs mb-1">
-                    <span>{skill.name}</span>
-                    <span className="text-blue-600">{skill.proficiency}%</span>
-                  </div>
-                  <div className="w-full rounded-full h-2" style={{backgroundColor: '#e5e7eb'}}>
-                    <div className="h-2 rounded-full" style={{width: `${skill.proficiency}%`, backgroundColor: '#2563eb'}}></div>
-                  </div>
+                <div key={index} className="flex items-center bg-gray-50 p-2 rounded" style={{backgroundColor: '#f9fafb'}}>
+                  <span className="mr-2">✓</span> {skill}
                 </div>
               ))}
             </div>
@@ -233,7 +221,7 @@ const CV = React.forwardRef((props, ref) => {
             <h3 className="font-semibold text-sm text-gray-800 mb-2">
               Soft Skills
             </h3>
-            <div className="grid grid-cols-3 gap-2 text-xs">
+            <div className="grid grid-cols-4 gap-2 text-xs">
               {softSkills.map((skill, index) => (
                 <div key={index} className="flex items-center bg-gray-50 p-2 rounded" style={{backgroundColor: '#f9fafb'}}>
                   <span className="mr-2">✓</span> {skill}
@@ -262,6 +250,24 @@ const CV = React.forwardRef((props, ref) => {
             ))}
           </div>
         </div>
+
+        {/* LANGUAGES */}
+        <div className="mt-5 break-inside-avoid">
+          <h2 className="text-lg font-bold text-gray-900 border-b-2 border-blue-600 pb-1" style={{borderBottomWidth: '2px', borderBottomStyle: 'solid', borderBottomColor: '#2563eb'}}>
+            LANGUAGES
+          </h2>
+          <div className="mt-3 space-y-2">
+            {languages.map((lang, index) => (
+              <div key={index} className="flex items-center text-sm">
+                <span className="mr-2 text-blue-600">▸</span>
+                <span className="font-semibold">{lang.name}</span>
+                <span className="mx-2">-</span>
+                <span className="text-gray-600">{lang.level}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
 
       {/* PAGE BREAK */}
@@ -269,25 +275,7 @@ const CV = React.forwardRef((props, ref) => {
 
       {/* ================= PAGE 2 ================= */}
       <div className="bg-white w-[210mm] h-[297mm] mx-auto p-10 text-gray-800" style={{pageBreakAfter: 'always'}}>
-        {/* LANGUAGES */}
-        <div className="break-inside-avoid">
-          <h2 className="text-lg font-bold text-gray-900 border-b-2 border-blue-600 pb-1" style={{borderBottomWidth: '2px', borderBottomStyle: 'solid', borderBottomColor: '#2563eb'}}>
-            LANGUAGES
-          </h2>
-          <div className="mt-3 grid grid-cols-2 gap-3">
-            {languages.map((lang, index) => (
-              <div key={index}>
-                <div className="flex justify-between text-sm mb-1">
-                  <span className="font-semibold">{lang.name}</span>
-                  <span className="text-blue-600">{lang.level}</span>
-                </div>
-                <div className="w-full rounded-full h-2" style={{backgroundColor: '#e5e7eb'}}>
-                  <div className="h-2 rounded-full" style={{width: `${lang.proficiency}%`, backgroundColor: '#2563eb'}}></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        
 
         {/* PROJECTS */}
         <div className="break-inside-avoid mt-5">
@@ -295,22 +283,29 @@ const CV = React.forwardRef((props, ref) => {
             PROJECTS
           </h2>
 
-          <div className="mt-3 space-y-4">
+          <div className="mt-3 space-y-3">
             {projects.map((project, index) => (
-              <div key={index} className="border-l-4 border-blue-600 pl-4" style={{borderLeftWidth: '4px', borderLeftStyle: 'solid', borderLeftColor: '#2563eb'}}>
-                <h3 className="font-semibold text-sm flex items-center">
-                  <span className="mr-2">▸</span>
-                  {project.name}
-                </h3>
-                <p className="text-xs text-blue-600 mt-1 break-all inline-flex items-center">
-                  <FaLink className="mr-1" /> {project.link}
-                </p>
-                <p className="text-xs mt-1">
-                  <span className="font-semibold text-gray-700">Tech Stack:</span> {project.techStack}
-                </p>
-                <p className="text-sm mt-1.5 text-gray-700">
-                  {project.description}
-                </p>
+              <div key={index} className="flex">
+                <div className="mr-3 text-blue-600 text-xl">▸</div>
+                <div>
+                  <h3 className="font-semibold text-sm">
+                    {project.name}
+                  </h3>
+                  <p className="text-xs text-blue-600 mt-1 break-all inline-flex items-center">
+                    <FaLink className="mr-1" /> {project.link}
+                  </p>
+                  <p className="text-xs mt-1">
+                    <span className="font-semibold text-gray-700">Tech Stack:</span> {project.techStack}
+                  </p>
+                  <ul className="mt-1.5 text-sm text-gray-700 space-y-0.5">
+                    {project.description.map((item, i) => (
+                      <li key={i} className="flex items-start">
+                        <span className="mr-2 text-blue-600">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
