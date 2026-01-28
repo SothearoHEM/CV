@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@media print {
+  .page-break {
+    page-break-before: always;
+  }
+
+  body {
+    background: white;
+  }
+}
+
+.break-inside-avoid {
+  break-inside: avoid;
+}
+
+.section-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  border-bottom: 2px solid #000;
+  padding-bottom: 2px;
+}

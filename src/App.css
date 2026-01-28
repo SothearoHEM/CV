@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html, body {
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Hide everything except CV content */
+  body > *:not([ref]) {
+    display: none !important;
+  }
+
+  /* Remove gray wrapper styling */
+  .bg-gray-300 {
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Ensure proper page sizing */
+  .w-\[210mm\] {
+    margin: 0 !important;
+  }
+}
