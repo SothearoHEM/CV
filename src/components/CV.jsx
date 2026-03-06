@@ -10,7 +10,7 @@ const CV = React.forwardRef((props, ref) => {
   // Personal Information
   const personalInfo = {
     name: "HEM SOTHEARO",
-    jobTitle: "SOFTWARE DEVELOPER INTERN",
+    jobTitle: "JUNIOR FULL STACK DEVELOPER INTERN",
     email: "sothearohem@gmail.com",
     phone: "+855 92 20 23 93",
     address: "#884, st113, Ou Baek K'am, Sen Sok, Phnom Penh",
@@ -19,7 +19,7 @@ const CV = React.forwardRef((props, ref) => {
   };
 
   // Professional Summary
-  const professionalSummary = "I am a third-year Computer Science student who likes building websites and web applications. I have experience using ReactJS for frontend and PHP Laravel for backend. I can create simple APIs, connect database, and build responsive web pages. I want to improve my skills and gain real working experience as a software developer intern. I am a quick learner, hardworking, and a team player who is eager to contribute to the success of the organization. I am interested in becoming a fullstack developer.";
+  const professionalSummary = "I am a third-year Computer Science student passionate about building full stack web applications. I have hands-on experience using ReactJS and Tailwind CSS for frontend development, and PHP Laravel for backend services including RESTful API design and database integration. I am seeking a Junior Full Stack Developer Internship to apply my skills in both frontend and backend technologies, grow as a developer, and contribute to real-world projects. I am a quick learner, hardworking, and a collaborative team player eager to take on new challenges and deliver quality solutions.";
 
   // Technical Skills
   const technicalSkills = [
