@@ -1,6 +1,6 @@
 import React from "react";
 import { MdOutlineEmail, MdPhone, MdLocationOn, MdLanguage } from "react-icons/md";
-import { FaLink, FaCalendar, FaBook, FaMusic } from "react-icons/fa";
+import { FaLink, FaCalendar, FaBook, FaMusic, FaGithub } from "react-icons/fa";
 import { PiVolleyballLight } from "react-icons/pi";
 import img from "../assets/img.jpg";
 
@@ -10,23 +10,24 @@ const CV = React.forwardRef((props, ref) => {
   // Personal Information
   const personalInfo = {
     name: "HEM SOTHEARO",
-    jobTitle: "JUNIOR FULL STACK DEVELOPER INTERN",
+    jobTitle: "WEB DEVELOPER INTERN",
     email: "sothearohem@gmail.com",
     phone: "+855 92 20 23 93",
     address: "#884, st113, Ou Baek K'am, Sen Sok, Phnom Penh",
     website: "https://hem-sotheearo-portfolio-react-js-wi.vercel.app/",
+    github: "https://github.com/SothearoHEM",
     imgSrc: img
   };
 
   // Professional Summary
-  const professionalSummary = "I am a third-year Computer Science student passionate about building full stack web applications. I have hands-on experience using ReactJS and Tailwind CSS for frontend development, and PHP Laravel for backend services including RESTful API design and database integration. I am seeking a Junior Full Stack Developer Internship to apply my skills in both frontend and backend technologies, grow as a developer, and contribute to real-world projects. I am a quick learner, hardworking, and a collaborative team player eager to take on new challenges and deliver quality solutions.";
+  const professionalSummary = "Motivated 3rd-year Computer Science student with hands-on experience in full-stack development using ReactJS, Tailwind CSS, and PHP Laravel. Seeking a Web Developer Internship to leverage my skills in RESTful APIs, database integration, and responsive web design. A proactive, collaborative team player eager to contribute to real-world projects and build scalable applications.";
 
   // Technical Skills
   const technicalSkills = [
     "HTML/CSS/JavaScript",
-    "React (Basic)",
+    "ReactJS",
     "Tailwind CSS",
-    "PHP/Laravel (Basic)",
+    "PHP/Laravel",
     "SQL/Database",
     "Git/GitHub",
     "C#/.NET",
@@ -51,7 +52,7 @@ const CV = React.forwardRef((props, ref) => {
     {
       degree: "Bachelor of Computer Science",
       institution: "Royal University of Phnom Penh, Phnom Penh, Cambodia",
-      period: "Feb 2024 – Present"
+      period: "Feb 2024 - Present (Expected 2027)"
     },
     {
       degree: "English IEAP Program",
@@ -74,8 +75,21 @@ const CV = React.forwardRef((props, ref) => {
   // Projects
   const projects = [
     {
+      name: "Automated Financial Tracker (Full-stack)",
+      link: "https://automated-financial-tracker.vercel.app/",
+      github: "https://github.com/SothearoHEM/automated-financial-tracker",
+      techStack: "React + Laravel",
+      description: [
+        "Built a full-stack financial management system using Laravel backend and React.js frontend.",
+        "Designed a relational MySQL database schema to efficiently track transactions and ensure data integrity.",
+        "Developed secure RESTful APIs for user authentication and seamless frontend-backend communication.",
+        "Integrated interactive data visualizations to provide insights into user spending habits."
+      ]
+    },
+    {
       name: "Portfolio Website (ReactJS)",
       link: "https://hem-sotheearo-portfolio-react-js-wi.vercel.app/",
+      github: "https://github.com/SothearoHEM/HEM-Sotheearo-Portfolio-ReactJS-with-Tailwind-CSS",
       techStack: "ReactJS + Tailwind CSS",
       description: [
         "A fully responsive personal portfolio website",
@@ -86,6 +100,7 @@ const CV = React.forwardRef((props, ref) => {
     {
       name: "E-Commerce Project Front-End",
       link: "https://e-commerce-project-chi-vert.vercel.app/",
+      github: "https://github.com/SothearoHEM/e-commerce-project",
       techStack: "ReactJS + Tailwind CSS + Context API",
       description: [
         "A responsive e-commerce website",
@@ -148,10 +163,10 @@ const CV = React.forwardRef((props, ref) => {
   // ==================== END OF EDITABLE DATA ====================
 
   return (
-    <div ref={ref} className="bg-gray-300 p-6">
+    <div ref={ref} className="bg-gray-300 p-6 min-h-screen print:p-0 print:bg-white">
 
       {/* ================= PAGE 1 ================= */}
-      <div className="bg-white w-[210mm] h-[297mm] mx-auto p-10 text-gray-800" style={{pageBreakAfter: 'always'}}>
+      <div className="bg-white w-[210mm] h-[297mm] mx-auto p-8 text-gray-800 shadow-md mb-8 print:mb-0 print:shadow-none" style={{pageBreakAfter: 'always'}}>
 
         {/* HEADER WITH PHOTO SPACE */}
         <div className="flex justify-between items-start border-b-2 border-blue-600 pb-4" style={{borderBottomWidth: '2px', borderBottomStyle: 'solid', borderBottomColor: '#2563eb'}}>
@@ -174,6 +189,12 @@ const CV = React.forwardRef((props, ref) => {
                 <span className="mr-2"><MdLanguage /></span>
                 <a href={personalInfo.website} className="hover:underline break-all" target="_blank" rel="noopener noreferrer">
                   My Portfolio Website link
+                </a>
+              </p>
+              <p className="flex items-center text-blue-600">
+                <span className="mr-2 text-gray-700"><FaGithub /></span>
+                <a href={personalInfo.github} className="hover:underline break-all" target="_blank" rel="noopener noreferrer">
+                  {personalInfo.github}
                 </a>
               </p>
             </div>
@@ -276,19 +297,19 @@ const CV = React.forwardRef((props, ref) => {
       </div>
 
       {/* PAGE BREAK */}
-      <div className="page-break"></div>
+      <div className="page-break mt-8 print:mt-0 print:hidden"></div>
 
       {/* ================= PAGE 2 ================= */}
-      <div className="bg-white w-[210mm] h-[297mm] mx-auto p-10 text-gray-800" style={{pageBreakAfter: 'always'}}>
+      <div className="bg-white w-[210mm] h-[297mm] mx-auto p-8 text-gray-800 shadow-md print:shadow-none" style={{pageBreakAfter: 'auto'}}>
         
 
         {/* PROJECTS */}
-        <div className="break-inside-avoid mt-5">
+        <div className="break-inside-avoid mt-2">
           <h2 className="text-lg font-bold text-gray-900 border-b-2 border-blue-600 pb-1" style={{borderBottomWidth: '2px', borderBottomStyle: 'solid', borderBottomColor: '#2563eb'}}>
             PROJECTS
           </h2>
 
-          <div className="mt-3 space-y-3">
+          <div className="mt-2 space-y-2.5">
             {projects.map((project, index) => (
               <div key={index} className="flex">
                 <div className="mr-3 text-blue-600 text-xl">▸</div>
@@ -296,13 +317,20 @@ const CV = React.forwardRef((props, ref) => {
                   <h3 className="font-semibold text-sm">
                     {project.name}
                   </h3>
-                  <p className="text-xs text-blue-600 mt-1 break-all inline-flex items-center">
-                    <FaLink className="mr-1" /> {project.link}
-                  </p>
-                  <p className="text-xs mt-1">
+                  <div className="flex flex-wrap gap-x-4 gap-y-1 mt-0.5">
+                    <p className="text-xs text-blue-600 break-all inline-flex items-center">
+                      <FaLink className="mr-1 shrink-0" /> <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:underline">Live Preview</a>
+                    </p>
+                    {project.github && (
+                      <p className="text-xs text-gray-700 break-all inline-flex items-center">
+                        <FaGithub className="mr-1 shrink-0" /> <a href={project.github} target="_blank" rel="noopener noreferrer" className="hover:underline">GitHub Repository</a>
+                      </p>
+                    )}
+                  </div>
+                  <p className="text-xs mt-0.5">
                     <span className="font-semibold text-gray-700">Tech Stack:</span> {project.techStack}
                   </p>
-                  <ul className="mt-1.5 text-sm text-gray-700 space-y-0.5">
+                  <ul className="mt-1 text-sm text-gray-700 space-y-0">
                     {project.description.map((item, i) => (
                       <li key={i} className="flex items-start">
                         <span className="mr-2 text-blue-600">•</span>
@@ -317,12 +345,12 @@ const CV = React.forwardRef((props, ref) => {
         </div>
 
         {/* CERTIFICATIONS */}
-        <div className="mt-5 break-inside-avoid">
+        <div className="mt-4 break-inside-avoid">
           <h2 className="text-lg font-bold text-gray-900 border-b-2 border-blue-600 pb-1" style={{borderBottomWidth: '2px', borderBottomStyle: 'solid', borderBottomColor: '#2563eb'}}>
             COURSES & CERTIFICATIONS
           </h2>
 
-          <div className="mt-3 space-y-3">
+          <div className="mt-2 space-y-2">
             {certifications.map((cert, index) => (
               <div key={index} className="flex">
                 <div className="mr-3 text-blue-600 text-lg">✓</div>
@@ -336,18 +364,18 @@ const CV = React.forwardRef((props, ref) => {
         </div>
 
         {/* ACHIEVEMENTS */}
-        <div className="mt-5 break-inside-avoid">
+        <div className="mt-4 break-inside-avoid">
           <h2 className="text-lg font-bold text-gray-900 border-b-2 border-blue-600 pb-1" style={{borderBottomWidth: '2px', borderBottomStyle: 'solid', borderBottomColor: '#2563eb'}}>
             ACHIEVEMENTS
           </h2>
 
-          <div className="mt-3 space-y-3">
+          <div className="mt-2 space-y-2">
             {achievements.map((achievement, index) => (
               <div key={index} className="flex">
                 <div className="mr-3 text-blue-600 text-lg">★</div>
                 <div>
                   <p className="text-sm font-semibold text-gray-900">{achievement.title}</p>
-                  <p className="text-xs text-gray-500 mb-1 inline-flex items-center"><FaCalendar className="mr-1" /> {achievement.date}</p>
+                  <p className="text-xs text-gray-500 mb-0.5 inline-flex items-center"><FaCalendar className="mr-1" /> {achievement.date}</p>
                   <p className="text-sm text-gray-700">
                     {achievement.description}
                   </p>
@@ -358,11 +386,11 @@ const CV = React.forwardRef((props, ref) => {
         </div>
 
         {/* INTERESTS
-        <div className="mt-5 break-inside-avoid">
+        <div className="mt-4 break-inside-avoid">
           <h2 className="text-lg font-bold text-gray-900 border-b-2 border-blue-600 pb-1" style={{borderBottomWidth: '2px', borderBottomStyle: 'solid', borderBottomColor: '#2563eb'}}>
             INTERESTS & HOBBIES
           </h2>
-          <div className="mt-3 flex gap-4 text-sm">
+          <div className="mt-2 flex gap-4 text-sm">
             {interests.map((interest, index) => (
               <div key={index} className="flex items-center bg-gray-50 px-3 py-2 rounded-lg" style={{backgroundColor: '#f9fafb'}}>
                 <span className="mr-2">{interest.icon}</span> {interest.name}
@@ -372,12 +400,12 @@ const CV = React.forwardRef((props, ref) => {
         </div> */}
 
         {/* REFERENCES */}
-        <div className="mt-5 break-inside-avoid">
+        <div className="mt-4 break-inside-avoid">
           <h2 className="text-lg font-bold text-gray-900 border-b-2 border-blue-600 pb-1" style={{borderBottomWidth: '2px', borderBottomStyle: 'solid', borderBottomColor: '#2563eb'}}>
             REFERENCES
           </h2>
 
-          <div className="mt-3 space-y-3">
+          <div className="mt-2 space-y-2">
             {references && references.length > 0 ? (
               references.map((reference, index) => (
                 <div key={index} className="flex text-xs">
